@@ -1,0 +1,370 @@
+[
+  {
+    "id": 1,
+    "sale_id": 1,
+    "product_id": 1,
+    "quantity": 2,
+    "unit_price": 45000,
+    "total_price": 90000
+  },
+  {
+    "id": 2,
+    "sale_id": 2,
+    "product_id": 2,
+    "quantity": 5,
+    "unit_price": 1500,
+    "total_price": 7500
+  },
+  {
+    "id": 3,
+    "sale_id": 3,
+    "product_id": 3,
+    "quantity": 10,
+    "unit_price": 500,
+    "total_price": 5000
+  },
+  {
+    "id": 4,
+    "sale_id": 4,
+    "product_id": 4,
+    "quantity": 1,
+    "unit_price": 15000,
+    "total_price": 15000
+  },
+  {
+    "id": 5,
+    "sale_id": 5,
+    "product_id": 5,
+    "quantity": 3,
+    "unit_price": 3500,
+    "total_price": 10500
+  },
+  {
+    "id": 6,
+    "sale_id": 6,
+    "product_id": 6,
+    "quantity": 2,
+    "unit_price": 8000,
+    "total_price": 16000
+  },
+  {
+    "id": 7,
+    "sale_id": 7,
+    "product_id": 7,
+    "quantity": 1,
+    "unit_price": 12000,
+    "total_price": 12000
+  },
+  {
+    "id": 8,
+    "sale_id": 8,
+    "product_id": 8,
+    "quantity": 4,
+    "unit_price": 2000,
+    "total_price": 8000
+  },
+  {
+    "id": 9,
+    "sale_id": 9,
+    "product_id": 9,
+    "quantity": 1,
+    "unit_price": 5000,
+    "total_price": 5000
+  },
+  {
+    "id": 10,
+    "sale_id": 10,
+    "product_id": 10,
+    "quantity": 2,
+    "unit_price": 3000,
+    "total_price": 6000
+  },
+  {
+    "id": 11,
+    "sale_id": 11,
+    "product_id": 11,
+    "quantity": 8,
+    "unit_price": 1200,
+    "total_price": 9600
+  },
+  {
+    "id": 12,
+    "sale_id": 12,
+    "product_id": 12,
+    "quantity": 5,
+    "unit_price": 2500,
+    "total_price": 12500
+  },
+  {
+    "id": 13,
+    "sale_id": 13,
+    "product_id": 1,
+    "quantity": 1,
+    "unit_price": 45000,
+    "total_price": 45000
+  },
+  {
+    "id": 14,
+    "sale_id": 13,
+    "product_id": 2,
+    "quantity": 10,
+    "unit_price": 1500,
+    "total_price": 15000
+  },
+  {
+    "id": 15,
+    "sale_id": 14,
+    "product_id": 3,
+    "quantity": 20,
+    "unit_price": 500,
+    "total_price": 10000
+  },
+  {
+    "id": 16,
+    "sale_id": 15,
+    "product_id": 4,
+    "quantity": 2,
+    "unit_price": 15000,
+    "total_price": 30000
+  },
+  {
+    "id": 17,
+    "sale_id": 16,
+    "product_id": 5,
+    "quantity": 2,
+    "unit_price": 3500,
+    "total_price": 7000
+  },
+  {
+    "id": 18,
+    "sale_id": 16,
+    "product_id": 8,
+    "quantity": 3,
+    "unit_price": 2000,
+    "total_price": 6000
+  },
+  {
+    "id": 19,
+    "sale_id": 17,
+    "product_id": 10,
+    "quantity": 5,
+    "unit_price": 3000,
+    "total_price": 15000
+  },
+  {
+    "id": 20,
+    "sale_id": 18,
+    "product_id": 11,
+    "quantity": 10,
+    "unit_price": 1200,
+    "total_price": 12000
+  },
+  {
+    "id": 21,
+    "sale_id": 19,
+    "product_id": 12,
+    "quantity": 3,
+    "unit_price": 2500,
+    "total_price": 7500
+  },
+  {
+    "id": 22,
+    "sale_id": 20,
+    "product_id": 2,
+    "quantity": 15,
+    "unit_price": 1500,
+    "total_price": 22500
+  },
+  {
+    "id": 23,
+    "sale_id": 20,
+    "product_id": 3,
+    "quantity": 25,
+    "unit_price": 500,
+    "total_price": 12500
+  },
+  {
+    "id": 24,
+    "sale_id": 21,
+    "product_id": 1,
+    "quantity": 2,
+    "unit_price": 45000,
+    "total_price": 90000
+  },
+  {
+    "id": 25,
+    "sale_id": 22,
+    "product_id": 2,
+    "quantity": 5,
+    "unit_price": 1500,
+    "total_price": 7500
+  },
+  {
+    "id": 26,
+    "sale_id": 23,
+    "product_id": 3,
+    "quantity": 10,
+    "unit_price": 500,
+    "total_price": 5000
+  },
+  {
+    "id": 27,
+    "sale_id": 24,
+    "product_id": 4,
+    "quantity": 1,
+    "unit_price": 15000,
+    "total_price": 15000
+  },
+  {
+    "id": 28,
+    "sale_id": 25,
+    "product_id": 5,
+    "quantity": 3,
+    "unit_price": 3500,
+    "total_price": 10500
+  },
+  {
+    "id": 29,
+    "sale_id": 26,
+    "product_id": 6,
+    "quantity": 2,
+    "unit_price": 8000,
+    "total_price": 16000
+  },
+  {
+    "id": 30,
+    "sale_id": 27,
+    "product_id": 7,
+    "quantity": 1,
+    "unit_price": 12000,
+    "total_price": 12000
+  },
+  {
+    "id": 31,
+    "sale_id": 28,
+    "product_id": 8,
+    "quantity": 4,
+    "unit_price": 2000,
+    "total_price": 8000
+  },
+  {
+    "id": 32,
+    "sale_id": 29,
+    "product_id": 9,
+    "quantity": 1,
+    "unit_price": 5000,
+    "total_price": 5000
+  },
+  {
+    "id": 33,
+    "sale_id": 30,
+    "product_id": 10,
+    "quantity": 2,
+    "unit_price": 3000,
+    "total_price": 6000
+  },
+  {
+    "id": 34,
+    "sale_id": 31,
+    "product_id": 11,
+    "quantity": 8,
+    "unit_price": 1200,
+    "total_price": 9600
+  },
+  {
+    "id": 35,
+    "sale_id": 32,
+    "product_id": 12,
+    "quantity": 5,
+    "unit_price": 2500,
+    "total_price": 12500
+  },
+  {
+    "id": 36,
+    "sale_id": 33,
+    "product_id": 1,
+    "quantity": 1,
+    "unit_price": 45000,
+    "total_price": 45000
+  },
+  {
+    "id": 37,
+    "sale_id": 33,
+    "product_id": 2,
+    "quantity": 10,
+    "unit_price": 1500,
+    "total_price": 15000
+  },
+  {
+    "id": 38,
+    "sale_id": 34,
+    "product_id": 3,
+    "quantity": 20,
+    "unit_price": 500,
+    "total_price": 10000
+  },
+  {
+    "id": 39,
+    "sale_id": 35,
+    "product_id": 4,
+    "quantity": 2,
+    "unit_price": 15000,
+    "total_price": 30000
+  },
+  {
+    "id": 40,
+    "sale_id": 36,
+    "product_id": 5,
+    "quantity": 2,
+    "unit_price": 3500,
+    "total_price": 7000
+  },
+  {
+    "id": 41,
+    "sale_id": 36,
+    "product_id": 8,
+    "quantity": 3,
+    "unit_price": 2000,
+    "total_price": 6000
+  },
+  {
+    "id": 42,
+    "sale_id": 37,
+    "product_id": 10,
+    "quantity": 5,
+    "unit_price": 3000,
+    "total_price": 15000
+  },
+  {
+    "id": 43,
+    "sale_id": 38,
+    "product_id": 11,
+    "quantity": 10,
+    "unit_price": 1200,
+    "total_price": 12000
+  },
+  {
+    "id": 44,
+    "sale_id": 39,
+    "product_id": 12,
+    "quantity": 3,
+    "unit_price": 2500,
+    "total_price": 7500
+  },
+  {
+    "id": 45,
+    "sale_id": 40,
+    "product_id": 2,
+    "quantity": 15,
+    "unit_price": 1500,
+    "total_price": 22500
+  },
+  {
+    "id": 46,
+    "sale_id": 40,
+    "product_id": 3,
+    "quantity": 25,
+    "unit_price": 500,
+    "total_price": 12500
+  }
+]

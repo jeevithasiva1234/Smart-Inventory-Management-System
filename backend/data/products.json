@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "category_id": 1,
+    "quantity": 9,
+    "unit_price": 899.99,
+    "reorder_level": 5,
+    "status": "active",
+    "created_at": "2026-04-17T08:53:35.078Z"
+  },
+  {
+    "id": 2,
+    "name": "T-Shirt",
+    "category_id": 2,
+    "quantity": -10,
+    "unit_price": 19.99,
+    "reorder_level": 20,
+    "status": "active",
+    "created_at": "2026-04-17T08:53:35.078Z"
+  },
+  {
+    "id": 3,
+    "name": "Microwave",
+    "category_id": 3,
+    "quantity": -102,
+    "unit_price": 149.99,
+    "reorder_level": 3,
+    "status": "active",
+    "created_at": "2026-04-17T08:53:35.078Z"
+  },
+  {
+    "id": 4,
+    "name": "Laptop Computer",
+    "category_id": 1,
+    "quantity": 44,
+    "unit_price": 45000,
+    "reorder_level": 10,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.233Z"
+  },
+  {
+    "id": 5,
+    "name": "Wireless Mouse",
+    "category_id": 1,
+    "quantity": 190,
+    "unit_price": 1500,
+    "reorder_level": 30,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.234Z"
+  },
+  {
+    "id": 6,
+    "name": "USB-C Cable",
+    "category_id": 1,
+    "quantity": 296,
+    "unit_price": 500,
+    "reorder_level": 50,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.234Z"
+  },
+  {
+    "id": 7,
+    "name": "Monitor 27\"",
+    "category_id": 1,
+    "quantity": 28,
+    "unit_price": 15000,
+    "reorder_level": 5,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.234Z"
+  },
+  {
+    "id": 8,
+    "name": "Mechanical Keyboard",
+    "category_id": 1,
+    "quantity": 66,
+    "unit_price": 3500,
+    "reorder_level": 15,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.234Z"
+  },
+  {
+    "id": 9,
+    "name": "Office Desk",
+    "category_id": 2,
+    "quantity": 23,
+    "unit_price": 8000,
+    "reorder_level": 5,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.234Z"
+  },
+  {
+    "id": 10,
+    "name": "Ergonomic Chair",
+    "category_id": 2,
+    "quantity": 1,
+    "unit_price": 12000,
+    "reorder_level": 3,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.235Z"
+  },
+  {
+    "id": 11,
+    "name": "Desk Lamp LED",
+    "category_id": 2,
+    "quantity": 4,
+    "unit_price": 2000,
+    "reorder_level": 10,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.235Z"
+  },
+  {
+    "id": 12,
+    "name": "File Cabinet",
+    "category_id": 2,
+    "quantity": 4,
+    "unit_price": 5000,
+    "reorder_level": 4,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.235Z"
+  },
+  {
+    "id": 13,
+    "name": "Wireless Headphones",
+    "category_id": 3,
+    "quantity": 60,
+    "unit_price": 3000,
+    "reorder_level": 10,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.235Z"
+  },
+  {
+    "id": 14,
+    "name": "USB Hub 7-Port",
+    "category_id": 3,
+    "quantity": 120,
+    "unit_price": 1200,
+    "reorder_level": 25,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.236Z"
+  },
+  {
+    "id": 15,
+    "name": "Power Bank 20000mAh",
+    "category_id": 3,
+    "quantity": 100,
+    "unit_price": 2500,
+    "reorder_level": 20,
+    "status": "active",
+    "created_at": "2026-04-17T09:02:09.236Z"
+  },
+  {
+    "id": 16,
+    "name": "Laptop Computer",
+    "category_id": 1,
+    "quantity": 50,
+    "unit_price": 45000,
+    "reorder_level": 10,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.509Z"
+  },
+  {
+    "id": 17,
+    "name": "Wireless Mouse",
+    "category_id": 1,
+    "quantity": 200,
+    "unit_price": 1500,
+    "reorder_level": 30,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.510Z"
+  },
+  {
+    "id": 18,
+    "name": "USB-C Cable",
+    "category_id": 1,
+    "quantity": 300,
+    "unit_price": 500,
+    "reorder_level": 50,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.510Z"
+  },
+  {
+    "id": 19,
+    "name": "Monitor 27\"",
+    "category_id": 1,
+    "quantity": 30,
+    "unit_price": 15000,
+    "reorder_level": 5,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.511Z"
+  },
+  {
+    "id": 20,
+    "name": "Mechanical Keyboard",
+    "category_id": 1,
+    "quantity": 80,
+    "unit_price": 3500,
+    "reorder_level": 15,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.511Z"
+  },
+  {
+    "id": 21,
+    "name": "Office Desk",
+    "category_id": 2,
+    "quantity": 25,
+    "unit_price": 8000,
+    "reorder_level": 5,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.511Z"
+  },
+  {
+    "id": 22,
+    "name": "Ergonomic Chair",
+    "category_id": 2,
+    "quantity": 15,
+    "unit_price": 12000,
+    "reorder_level": 3,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.511Z"
+  },
+  {
+    "id": 23,
+    "name": "Desk Lamp LED",
+    "category_id": 2,
+    "quantity": 40,
+    "unit_price": 2000,
+    "reorder_level": 10,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.512Z"
+  },
+  {
+    "id": 24,
+    "name": "File Cabinet",
+    "category_id": 2,
+    "quantity": 20,
+    "unit_price": 5000,
+    "reorder_level": 4,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.512Z"
+  },
+  {
+    "id": 25,
+    "name": "Wireless Headphones",
+    "category_id": 3,
+    "quantity": 60,
+    "unit_price": 3000,
+    "reorder_level": 10,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.512Z"
+  },
+  {
+    "id": 26,
+    "name": "USB Hub 7-Port",
+    "category_id": 3,
+    "quantity": 120,
+    "unit_price": 1200,
+    "reorder_level": 25,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.512Z"
+  },
+  {
+    "id": 27,
+    "name": "Power Bank 20000mAh",
+    "category_id": 3,
+    "quantity": 100,
+    "unit_price": 2500,
+    "reorder_level": 20,
+    "status": "active",
+    "created_at": "2026-04-17T09:26:03.512Z"
+  }
+]

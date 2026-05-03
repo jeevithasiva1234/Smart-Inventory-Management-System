@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="login-container active">
+        <div class="login-box">
+            <div class="login-header">
+                <h1><i class="fas fa-warehouse"></i> Inventory Pro</h1>
+                <p>Smart Inventory Management</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+                <div id="loginError" class="error-message" style="display: none;"></div>
+            </form>
+            <div class="login-footer">
+                <p>Demo Credentials: <strong>admin</strong> / <strong>admin123</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="mainDashboard" class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-warehouse"></i> Inventory Pro</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" data-page="dashboard" class="nav-item active">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="#" data-page="products" class="nav-item">
+                    <i class="fas fa-box"></i> Products
+                </a>
+                <a href="#" data-page="billing" class="nav-item">
+                    <i class="fas fa-receipt"></i> Billing
+                </a>
+                <a href="#" data-page="reports" class="nav-item">
+                    <i class="fas fa-chart-bar"></i> Reports
+                </a>
+                <a href="#" data-page="users" class="nav-item admin-only" style="display: none;">
+                    <i class="fas fa-users"></i> Users
+                </a>
+                <a href="#" data-page="alerts" class="nav-item">
+                    <i class="fas fa-bell"></i> Alerts
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="user-info">
+                        <p id="currentUsername">User</p>
+                        <small>Logged in</small>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search...">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                
+                <!-- Dashboard Page -->
+                <div id="dashboard-page" class="page-content active">
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-cubes"></i></div>
+                            <div class="stat-content">
+                                <p class="stat-label">Total Products</p>
+                                <h3 id="totalProducts" class="stat-value">0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon warning"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="stat-content">
+                                <p class="stat-label">Low Stock Items</p>
+                                <h3 id="lowStockItems" class="stat-value">0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon success"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat-content">
+                                <p class="stat-label">Total Sales</p>
+                                <h3 id="totalSales" class="stat-value">₹0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon info"><i class="fas fa-chart-line"></i></div>
+                            <div class="stat-content">
+                                <p class="stat-label">Total Profit</p>
+                                <h3 id="totalProfit" class="stat-value">₹0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-coins"></i></div>
+                            <div class="stat-content">
+                                <p class="stat-label">Today's Revenue</p>
+                                <h3 id="todaysRevenue" class="stat-value">₹0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-container glass-card">
+                            <h3>Monthly Sales</h3>
+                            <canvas id="monthlySalesChart"></canvas>
+                        </div>
+                        <div class="chart-container glass-card">
+                            <h3>Monthly Profit</h3>
+                            <canvas id="profitChart"></canvas>
+                        </div>
+                        <div class="chart-container glass-card">
+                            <h3>Stock by Category</h3>
+                            <canvas id="stockCategoryChart"></canvas>
+                        </div>
+                        <div class="chart-container glass-card">
+                            <h3>Best Selling Products</h3>
+                            <canvas id="bestSellersChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Page -->
+                <div id="products-page" class="page-content">
+                    <div class="page-header">
+                        <h2>Product Management</h2>
+                        <button id="addProductBtn" class="btn-primary">
+                            <i class="fas fa-plus"></i> Add Product
+                        </button>
+                    </div>
+
+                    <div class="products-container glass-card">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Reorder Level</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Billing Page -->
+                <div id="billing-page" class="page-content">
+                    <div class="page-header">
+                        <h2>Create Bill</h2>
+                    </div>
+
+                    <div class="billing-container">
+                        <div class="billing-form glass-card">
+                            <h3>Invoice Details</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Select Product</label>
+                                    <select id="billProductSelect">
+                                        <option value="">-- Select Product --</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Quantity</label>
+                                    <input type="number" id="billQuantity" placeholder="Enter quantity" min="1">
+                                </div>
+                                <button id="addBillItem" class="btn-primary">Add Item</button>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Tax %</label>
+                                    <input type="number" id="taxPercentage" value="18" min="0" max="100">
+                                </div>
+                                <div class="form-group">
+                                    <label>Discount Amount</label>
+                                    <input type="number" id="discountAmount" value="0" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment Method</label>
+                                    <select id="paymentMethod">
+                                        <option>Cash</option>
+                                        <option>Card</option>
+                                        <option>UPI</option>
+                                        <option>Cheque</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Notes</label>
+                                <textarea id="billNotes" placeholder="Additional notes..." rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="bill-summary glass-card">
+                            <h3>Invoice Summary</h3>
+                            <table class="data-table" id="billItemsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Qty</th>
+                                        <th>Unit Price</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="billItemsBody">
+                                </tbody>
+                            </table>
+
+                            <div class="bill-totals">
+                                <div class="total-row">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal">₹0.00</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Tax:</span>
+                                    <span id="taxAmount">₹0.00</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Discount:</span>
+                                    <span id="discountDisplay">₹0.00</span>
+                                </div>
+                                <div class="total-row grand-total">
+                                    <span>Grand Total:</span>
+                                    <span id="grandTotal">₹0.00</span>
+                                </div>
+                            </div>
+
+                            <div class="bill-actions">
+                                <button id="printBillBtn" class="btn-primary">
+                                    <i class="fas fa-print"></i> Print Invoice
+                                </button>
+                                <button id="saveBillBtn" class="btn-success">
+                                    <i class="fas fa-save"></i> Save & Submit
+                                </button>
+                                <button id="clearBillBtn" class="btn-secondary">
+                                    <i class="fas fa-redo"></i> Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sales-history glass-card" style="margin-top: 30px;">
+                        <h3>Recent Sales</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Sale Number</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Tax</th>
+                                    <th>Total</th>
+                                    <th>Payment</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="salesHistoryBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Reports Page -->
+                <div id="reports-page" class="page-content">
+                    <div class="page-header">
+                        <h2>Reports & Analytics</h2>
+                    </div>
+
+                    <div class="reports-grid">
+                        <div class="chart-container glass-card">
+                            <h3>Monthly Sales Trend</h3>
+                            <canvas id="reportMonthlySalesChart"></canvas>
+                        </div>
+                        <div class="chart-container glass-card">
+                            <h3>Monthly Profit Trend</h3>
+                            <canvas id="reportProfitChart"></canvas>
+                        </div>
+                        <div class="chart-container glass-card">
+                            <h3>Product Stock Distribution</h3>
+                            <canvas id="reportStockChart"></canvas>
+                        </div>
+                        <div class="chart-container glass-card">
+                            <h3>Top Selling Products</h3>
+                            <canvas id="reportBestSellersChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Page (Admin Only) -->
+                <div id="users-page" class="page-content">
+                    <div class="page-header">
+                        <h2>User Management</h2>
+                        <button id="addUserBtn" class="btn-primary">
+                            <i class="fas fa-plus"></i> Add User
+                        </button>
+                    </div>
+
+                    <div class="users-container glass-card">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Alerts Page -->
+                <div id="alerts-page" class="page-content">
+                    <div class="page-header">
+                        <h2>Inventory Alerts</h2>
+                    </div>
+
+                    <div class="alerts-grid">
+                        <div class="glass-card">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Low Stock Items</h3>
+                            <table class="data-table" id="lowStockTable">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Current Qty</th>
+                                        <th>Reorder Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lowStockBody">
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="glass-card">
+                            <h3><i class="fas fa-ban"></i> Out of Stock Items</h3>
+                            <table class="data-table" id="outOfStockTable">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="outOfStockBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="productModalTitle">Add Product</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="productName" placeholder="Enter product name" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <div class="form-row-inline">
+                        <select id="productCategory" required>
+                            <option value="">-- Select Category --</option>
+                        </select>
+                        <button type="button" id="addCategoryBtn" class="btn-small">
+                            <i class="fas fa-plus"></i> New
+                        </button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Initial Quantity</label>
+                        <input type="number" id="productQuantity" placeholder="0" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Unit Price (₹)</label>
+                        <input type="number" id="productPrice" placeholder="0.00" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Reorder Level</label>
+                        <input type="number" id="productReorderLevel" placeholder="10" min="1" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Product</button>
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Category Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add Category</h2>
+            <form id="categoryForm">
+                <div class="form-group">
+                    <label>Category Name</label>
+                    <input type="text" id="categoryName" placeholder="Enter category name" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="categoryDescription" placeholder="Enter description" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Add Category</button>
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add User</h2>
+            <form id="userForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="userName" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="userEmail" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="userPassword" placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <select id="userRole">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Create User</button>
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div id="alertModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="alertTitle">Alert</h2>
+            <p id="alertMessage"></p>
+            <button class="btn-primary close-modal">OK</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

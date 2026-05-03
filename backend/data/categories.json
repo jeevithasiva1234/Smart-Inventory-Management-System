@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Electronics",
+    "description": "Electronic devices",
+    "created_at": "2026-04-17T08:53:35.078Z"
+  },
+  {
+    "id": 2,
+    "name": "Clothing",
+    "description": "Clothing items",
+    "created_at": "2026-04-17T08:53:35.078Z"
+  },
+  {
+    "id": 3,
+    "name": "Home & Kitchen",
+    "description": "Home and kitchen products",
+    "created_at": "2026-04-17T08:53:35.078Z"
+  }
+]
